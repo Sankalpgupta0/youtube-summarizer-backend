@@ -4,7 +4,15 @@ from youtube_transcript_api._errors import VideoUnavailable, NoTranscriptFound, 
 import re
 
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyBKj8bYZFqzSvbRdR5WDOZpek21fLC3SBI")
+from django.conf import settings
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Configure Gemini API
+genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
 prompt="""You are Yotube video summarizer. You will be taking the transcript text
 and summarizing the entire video and providing the important summary in points
