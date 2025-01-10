@@ -150,3 +150,10 @@ CORS_ALLOW_HEADERS = [
 ]
 
 APPEND_SLASH = False
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.vercel.app',
+    'http://localhost',
+    'http://127.0.0.1'
+]

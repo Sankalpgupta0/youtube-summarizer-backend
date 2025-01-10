@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+from django.views.decorators.csrf import csrf_exempt
+
 # Configure Gemini API
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
