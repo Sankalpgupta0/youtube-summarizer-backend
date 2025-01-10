@@ -48,7 +48,8 @@ def extract_transcript(request):
     except NoTranscriptFound:
         return JsonResponse({"error": "No transcript found for the video."}, status=404)
     except TranscriptsDisabled:
-        return JsonResponse({"error": "Transcripts are disabled for this video."}, status=403)
+        print("Transcripts are disabled for this video. ")
+        return JsonResponse({"error": "Transcripts are disabled for this video. "}, status=403)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
 
