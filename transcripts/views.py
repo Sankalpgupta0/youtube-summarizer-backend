@@ -57,3 +57,12 @@ def generate_gemini_content(transcript_text, prompt):
     response=model.generate_content(prompt+transcript_text)
     return response.text
 
+def home(request):
+    return JsonResponse({
+        "status": "success",
+        "message": "Welcome to YouTube Transcript API Server",
+        "endpoints": {
+            "transcript": "/api/?youtube_video_url=YOUR_YOUTUBE_URL"
+        }
+    })
+
