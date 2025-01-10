@@ -37,6 +37,7 @@ def extract_transcript(request):
         # print("transcript", transcript)
         
         summary = generate_gemini_content(transcript, prompt)
+        print("summary", summary)
 
         return JsonResponse({"summary": summary}, status=200)
 
